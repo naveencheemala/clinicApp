@@ -1,0 +1,42 @@
+<div class="container py-4">
+  <h2 class="mb-4 text-primary">Clinic Outcomes</h2>
+
+  <div class="btn-group mb-4" role="group">
+    <button type="button" class="btn btn-outline-primary" [ngClass]="{ active: selectedRange === 30 }"
+      (click)="loadData(30)">30 Days</button>
+
+    <button type="button" class="btn btn-outline-primary" [ngClass]="{ active: selectedRange === 60 }"
+      (click)="loadData(60)">60 Days</button>
+
+    <button type="button" class="btn btn-outline-primary" [ngClass]="{ active: selectedRange === 90 }"
+      (click)="loadData(90)">90 Days</button>
+  </div>
+  <p class="text-muted mb-1">
+    Showing {{activePatients}} patients from last {{selectedRange}} days of available data from {{dateRange.start}} -
+    {{dateRange.end}}
+  </p>
+  <p class="text-muted small">
+    Only patients with a minimum of 10 days of SG data are included. Last updated on {{lastUpdated}}.
+  </p>
+  <div class="row g-4">
+    <!-- Time in Range -->
+    <div class="col-md-6">
+      <div class="h-50 p-3 bg-light rounded shadow-sm d-flex flex-column">
+        <h3 class="text-secondary mb-3">Time in Range</h3>
+        <div class="flex-grow-1">
+          <canvas baseChart [data]="timeInRangeChart" [type]="barType" class="w-100 h-100"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- GMI -->
+    <div class="col-md-6">
+      <div class="h-50 p-3 bg-light rounded shadow-sm d-flex flex-column">
+        <h3 class="text-secondary mb-3">GMI</h3>
+        <div class="flex-grow-1" style="height: 110%;width: 110%;">
+          <canvas baseChart [data]="gmiChart" [type]="pieType" class="w-100 h-100"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

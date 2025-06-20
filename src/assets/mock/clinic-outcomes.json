@@ -1,0 +1,20 @@
+{
+  "dateRange": "01/01/2024 - 01/31/2024",
+  "patients": 129,
+  "lastUpdated": "2024-02-01T14:30:00Z",
+  "barData": {
+    "labels": ["Low", "In Range", "High"],
+    "datasets": [{
+      "label": "Time in Range",
+      "data": [1, 82, 15],
+      "backgroundColor": ["red", "green", "orange"]
+    }]
+  },
+  "pieData": {
+    "labels": ["<7%", "7%-8%", ">8%"],
+    "datasets": [{
+      "data": [72, 23, 5],
+      "backgroundColor": ["#66bb6a", "#ffa726", "#ef5350"]
+    }]
+  }
+}
